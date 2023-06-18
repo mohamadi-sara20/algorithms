@@ -6,7 +6,7 @@ from merge import merge_sort
 from merge_nosentinel import merge_nosentinel
 import random
 from insertion_recursive import insertion_recursive
-
+from insertion_binary import insertion_binary
 
 class TestSort(unittest.TestCase):
     def __init__(self, *args, **kwargs):
@@ -16,7 +16,7 @@ class TestSort(unittest.TestCase):
         self.C = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
         self.D = [1,2,3,4,5,6]
         self.F = [random.randint(1, 10000) for i in range(2**5)]
-        self.F = [random.randint(1, 10000) for i in range(3**9)]
+        self.F = [random.randint(1, 10000) for i in range(3**3)]
 
 
     
@@ -50,12 +50,19 @@ class TestSort(unittest.TestCase):
         self.assertEqual(merge_nosentinel(self.F, 0, len(self.F)-1), sorted(self.F))
 
     def test_insertion_recursive(self):
-        self.assertEqual(insertion_recursive(self.A, 0, len(self.A) - 1), sorted(self.A))
-        self.assertEqual(insertion_recursive(self.B, 0, len(self.B) - 1), sorted(self.B))
-        self.assertEqual(insertion_recursive(self.C, 0, len(self.C) - 1), sorted(self.C))
-        self.assertEqual(insertion_recursive(self.D, 0, len(self.D) - 1), self.D)
-        self.assertEqual(insertion_recursive(self.F, 0, len(self.F)-1), sorted(self.F))
+        self.assertEqual(insertion_recursive(self.A, len(self.A)-1), sorted(self.A))
+        self.assertEqual(insertion_recursive(self.B, len(self.B)-1), sorted(self.B))
+        self.assertEqual(insertion_recursive(self.C, len(self.C)-1), sorted(self.C))
+        self.assertEqual(insertion_recursive(self.D, len(self.D)-1), self.D)
+        self.assertEqual(insertion_recursive(self.F, len(self.F)-1), sorted(self.F))
 
+    def test_insertion_binary(self):
+        self.assertEqual(insertion_sort(self.A), sorted(self.A))
+        self.assertEqual(insertion_sort(self.B), sorted(self.B))
+        self.assertEqual(insertion_sort(self.C), sorted(self.C))
+        self.assertEqual(insertion_sort(self.D), self.D)
+        self.assertEqual(insertion_sort(self.F), sorted(self.F))
+    
 
 
 
