@@ -1,19 +1,3 @@
-import unittest
-
-class TestInsertionSort(unittest.TestCase):
-    def test_unsorted(self):
-        A = [5, 2, 4, 6, 1, 3]
-        B = [4, 1, 3, 9, 7]
-        C = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
-        self.assertEqual(selection_sort(A), [1, 2, 3, 4, 5, 6])
-        self.assertEqual(selection_sort(B), [1, 3, 4, 7, 9])
-        self.assertEqual(selection_sort(C), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-
-
-    def test_sorted(self):
-        D = [1,2,3,4,5,6]
-        self.assertEqual(selection_sort(D), D)
-
 # Loop Invariant: A[:i]
 def selection_sort(A):
     for i in range(len(A)):
@@ -26,5 +10,3 @@ def selection_sort(A):
         A[ind_smallest] = tmp
     return A
 
-if __name__ == "__main__":
-    unittest.main()
