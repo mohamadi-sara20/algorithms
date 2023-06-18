@@ -3,6 +3,7 @@ from selection import selection_sort
 from insertion import insertion_sort
 from bubble import bubble_sort
 from merge import merge_sort
+from merge_nosentinel import merge_nosentinel
 
 class TestSort(unittest.TestCase):
     def __init__(self, *args, **kwargs):
@@ -31,6 +32,13 @@ class TestSort(unittest.TestCase):
         self.assertEqual(merge_sort(self.C, 0, len(self.C) - 1), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
         self.assertEqual(merge_sort(self.D, 0, len(self.D) - 1), self.D)
     
+    def test_merge_nosentinel(self):
+        self.assertEqual(merge_nosentinel(self.A, 0, len(self.A) - 1), [1, 2, 3, 4, 5, 6])
+        self.assertEqual(merge_nosentinel(self.B, 0, len(self.B) - 1), [1, 3, 4, 7, 9])
+        self.assertEqual(merge_nosentinel(self.C, 0, len(self.C) - 1), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+        self.assertEqual(merge_nosentinel(self.D, 0, len(self.D) - 1), self.D)
+    
+
 
 
 if __name__ == "__main__":
