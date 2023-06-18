@@ -1,7 +1,8 @@
 import unittest
 from selection import selection_sort
 from insertion import insertion_sort
-from bubble import *
+from bubble import bubble_sort
+from merge import merge_sort
 
 class TestInsertionSort():
     def __init__(self):
@@ -22,6 +23,12 @@ class TestInsertionSort():
         self.assertEqual(insertion_sort(self.B), [1, 3, 4, 7, 9])
         self.assertEqual(insertion_sort(self.D), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
         self.assertEqual(insertion_sort(self.D), self.D)
+    
+    def test_merge(self):
+        self.assertEqual(merge_sort(self.A), [1, 2, 3, 4, 5, 6])
+        self.assertEqual(merge_sort(self.B), [1, 3, 4, 7, 9])
+        self.assertEqual(merge_sort(self.D), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+        self.assertEqual(merge_sort(self.D), self.D)
     
 
 
