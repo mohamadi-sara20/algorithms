@@ -26,9 +26,4 @@ def merge_sort(A, p, r):
         merge_sort(A, p, q)
         merge_sort(A, q+1, r)
         merge(A, p, q, r)
-
-
-if __name__ == "__main__":
-    A = [5, 2, 4, 1, 3, 6]
-    print(merge_sort(A, 0, len(A)-1))
-    print(A)
+    return A

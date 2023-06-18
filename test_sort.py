@@ -4,8 +4,9 @@ from insertion import insertion_sort
 from bubble import bubble_sort
 from merge import merge_sort
 
-class TestInsertionSort():
-    def __init__(self):
+class TestSort(unittest.TestCase):
+    def __init__(self, *args, **kwargs):
+        super(TestSort, self).__init__(*args, **kwargs)
         self.A = [5, 2, 4, 6, 1, 3]
         self.B = [4, 1, 3, 9, 7]
         self.C = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
@@ -21,14 +22,14 @@ class TestInsertionSort():
     def test_insertion(self):
         self.assertEqual(insertion_sort(self.A), [1, 2, 3, 4, 5, 6])
         self.assertEqual(insertion_sort(self.B), [1, 3, 4, 7, 9])
-        self.assertEqual(insertion_sort(self.D), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+        self.assertEqual(insertion_sort(self.C), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
         self.assertEqual(insertion_sort(self.D), self.D)
     
     def test_merge(self):
-        self.assertEqual(merge_sort(self.A), [1, 2, 3, 4, 5, 6])
-        self.assertEqual(merge_sort(self.B), [1, 3, 4, 7, 9])
-        self.assertEqual(merge_sort(self.D), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-        self.assertEqual(merge_sort(self.D), self.D)
+        self.assertEqual(merge_sort(self.A, 0, len(self.A) - 1), [1, 2, 3, 4, 5, 6])
+        self.assertEqual(merge_sort(self.B, 0, len(self.B) - 1), [1, 3, 4, 7, 9])
+        self.assertEqual(merge_sort(self.C, 0, len(self.C) - 1), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+        self.assertEqual(merge_sort(self.D, 0, len(self.D) - 1), self.D)
     
 
 
