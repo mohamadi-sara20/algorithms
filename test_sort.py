@@ -4,6 +4,7 @@ from insertion import insertion_sort
 from bubble import bubble_sort
 from merge import merge_sort
 from merge_nosentinel import merge_nosentinel
+import random
 
 class TestSort(unittest.TestCase):
     def __init__(self, *args, **kwargs):
@@ -12,31 +13,40 @@ class TestSort(unittest.TestCase):
         self.B = [4, 1, 3, 9, 7]
         self.C = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
         self.D = [1,2,3,4,5,6]
+        self.F = [random.randint(1, 10000) for i in range(2**5)]
+        self.F = [random.randint(1, 10000) for i in range(3**9)]
+
 
     
     def test_selection(self):
-        self.assertEqual(selection_sort(self.A), [1, 2, 3, 4, 5, 6])
-        self.assertEqual(selection_sort(self.B), [1, 3, 4, 7, 9])
-        self.assertEqual(selection_sort(self.C), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+        self.assertEqual(selection_sort(self.A), sorted(self.A))
+        self.assertEqual(selection_sort(self.B), sorted(self.B))
+        self.assertEqual(selection_sort(self.C), sorted(self.C))
         self.assertEqual(selection_sort(self.D), self.D)
+        self.assertEqual(selection_sort(self.F), sorted(self.F))
 
     def test_insertion(self):
-        self.assertEqual(insertion_sort(self.A), [1, 2, 3, 4, 5, 6])
-        self.assertEqual(insertion_sort(self.B), [1, 3, 4, 7, 9])
-        self.assertEqual(insertion_sort(self.C), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+        self.assertEqual(insertion_sort(self.A), sorted(self.A))
+        self.assertEqual(insertion_sort(self.B), sorted(self.B))
+        self.assertEqual(insertion_sort(self.C), sorted(self.C))
         self.assertEqual(insertion_sort(self.D), self.D)
+        self.assertEqual(insertion_sort(self.F), sorted(self.F))
     
     def test_merge(self):
-        self.assertEqual(merge_sort(self.A, 0, len(self.A) - 1), [1, 2, 3, 4, 5, 6])
-        self.assertEqual(merge_sort(self.B, 0, len(self.B) - 1), [1, 3, 4, 7, 9])
-        self.assertEqual(merge_sort(self.C, 0, len(self.C) - 1), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+        self.assertEqual(merge_sort(self.A, 0, len(self.A) - 1), sorted(self.A))
+        self.assertEqual(merge_sort(self.B, 0, len(self.B) - 1), sorted(self.B))
+        self.assertEqual(merge_sort(self.C, 0, len(self.C) - 1), sorted(self.C))
         self.assertEqual(merge_sort(self.D, 0, len(self.D) - 1), self.D)
+        self.assertEqual(merge_sort(self.F, 0, len(self.F)-1), sorted(self.F))
+
     
     def test_merge_nosentinel(self):
-        self.assertEqual(merge_nosentinel(self.A, 0, len(self.A) - 1), [1, 2, 3, 4, 5, 6])
-        self.assertEqual(merge_nosentinel(self.B, 0, len(self.B) - 1), [1, 3, 4, 7, 9])
-        self.assertEqual(merge_nosentinel(self.C, 0, len(self.C) - 1), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+        self.assertEqual(merge_nosentinel(self.A, 0, len(self.A) - 1), sorted(self.A))
+        self.assertEqual(merge_nosentinel(self.B, 0, len(self.B) - 1), sorted(self.B))
+        self.assertEqual(merge_nosentinel(self.C, 0, len(self.C) - 1), sorted(self.C))
         self.assertEqual(merge_nosentinel(self.D, 0, len(self.D) - 1), self.D)
+        self.assertEqual(merge_nosentinel(self.F, 0, len(self.F)-1), sorted(self.F))
+
     
 
 
