@@ -1,7 +1,5 @@
 import math
-# Loop Invariant: A[:i]
-
-
+# Loop Invariant: each subarray being merged (at combine step) is sorted
 def merge(A, p, q, r):
     L = []
     R = []
