@@ -6,6 +6,7 @@ from merge_nosentinel import merge_nosentinel
 import random
 from insertion_recursive import insertion_recursive
 from insertion_binary import insertion_binary
+from bubble_sort import bubble_sort
 
 class TestSort(unittest.TestCase):
     def __init__(self, *args, **kwargs):
@@ -56,11 +57,18 @@ class TestSort(unittest.TestCase):
         self.assertEqual(insertion_recursive(self.F, len(self.F)-1), sorted(self.F))
 
     def test_insertion_binary(self):
-        self.assertEqual(insertion_sort(self.A), sorted(self.A))
-        self.assertEqual(insertion_sort(self.B), sorted(self.B))
-        self.assertEqual(insertion_sort(self.C), sorted(self.C))
-        self.assertEqual(insertion_sort(self.D), self.D)
-        self.assertEqual(insertion_sort(self.F), sorted(self.F))
+        self.assertEqual(insertion_binary(self.A), sorted(self.A))
+        self.assertEqual(insertion_binary(self.B), sorted(self.B))
+        self.assertEqual(insertion_binary(self.C), sorted(self.C))
+        self.assertEqual(insertion_binary(self.D), self.D)
+        self.assertEqual(insertion_binary(self.F), sorted(self.F))
+    
+    def test_bubble_sort(self):
+        self.assertEqual(bubble_sort(self.A), sorted(self.A))
+        self.assertEqual(bubble_sort(self.B), sorted(self.B))
+        self.assertEqual(bubble_sort(self.C), sorted(self.C))
+        self.assertEqual(bubble_sort(self.D), self.D)
+        self.assertEqual(bubble_sort(self.F), sorted(self.F))
     
 
 
