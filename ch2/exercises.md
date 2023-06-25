@@ -84,7 +84,7 @@ Best case and worst case does are the same, because it does not matter what orer
 ## 2.2.3
 
 ```
-Average: E(X) = sum(pi * xi) = 1/n * sum(i) = (n * (n + 1))/2n = (n+1)/2 (pi is equal for all indices, and xi are indices themselves)
+Average: E(X) = sum(pi * xi) = 1/n * sum(xi) = (n * (n + 1))/2n = (n+1)/2 (pi is equal for all indices, and xi are indices themselves)
 Worst case: n elements should be checked. 
 ```
 
@@ -139,4 +139,5 @@ BinarySearch(A, low, high, v):
 
 ## 2.3.6
 ```
+Combining binary search with insertion sort would not helo the performance much, because although we know where to insert the current element, the number of items to be moved remain the same as the linear search case. 
 ```
