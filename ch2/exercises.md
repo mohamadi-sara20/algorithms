@@ -64,3 +64,32 @@ return C
             C[j ] += 1
     return C -->
 ```
+
+## 2.2.1
+
+```
+Θ(n^3)
+```
+
+## 2.2.2
+
+```
+Loop Invariant: 1 to k has k smallest numbers of the array in a sorted order. 
+It runs only n-1 times, because by the time we reach the nth element, n-1 smallest elemnts have been sorted, and so n is the nth small element and is therefore already placed where it should be. 
+Best case: Θ(n^2)
+Worst case: Θ(n^2)
+Best case and worst case does are the same, because it does not matter what orer the elements come in, we need to do a certain number of comparisons at each iteration anyway (to find the k smallest number), independent of the primary configuaration of the array. 
+```
+
+## 2.2.3
+
+```
+Average: E(X) = sum(pi * xi) = 1/n * sum(i) = (n * (n + 1))/2n = (n+1)/2 (pi is equal for all indices, and xi are indices themselves)
+Worst case: n elements should be checked. 
+```
+
+## 2.2.4
+
+```
+Caching could help?
+```
