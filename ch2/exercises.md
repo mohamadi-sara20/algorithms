@@ -93,3 +93,50 @@ Worst case: n elements should be checked.
 ```
 Caching could help?
 ```
+
+## 2.3.1
+
+```
+            3 9 26 38 41 52 57
+    3 26 41 52              9 38 49 57
+3   41      26  52      38  57      9   49
+3   41      52  26      38  57      9   49
+```
+
+
+## 2.3.2
+```
+See _merge_nosentinel.py_. 
+```
+
+## 2.3.3
+
+
+## 2.3.4
+
+```
+See _insertion_recursive.py_. 
+```
+
+## 2.3.5
+
+```
+See _binary_search.py_. 
+Binary search is Θ(lgn), because the problem is repeatedly split in half (divide), and solved from smaller to greater pieces. Since the array has n elements, it can be split in half lgn times. 
+
+
+BinarySearch(A, low, high, v):
+    if low <= mid:
+        mid = (high + low) / 2
+        if v == A[mid]:
+            return mid
+        if x < A[mid]:
+            BinarySearch(A, low, mid, v)
+        else:
+            BinarySearch(A, mid+1, high, v)
+```
+
+
+## 2.3.6
+```
+```
