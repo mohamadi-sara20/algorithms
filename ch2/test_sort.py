@@ -7,7 +7,7 @@ import random
 from insertion_recursive import insertion_recursive
 from insertion_binary import insertion_binary
 from bubble_sort import bubble_sort
-
+from insertion_decreasing import insertion_sort_decreasing
 class TestSort(unittest.TestCase):
     def __init__(self, *args, **kwargs):
         super(TestSort, self).__init__(*args, **kwargs)
@@ -70,8 +70,13 @@ class TestSort(unittest.TestCase):
         self.assertEqual(bubble_sort(self.D), self.D)
         self.assertEqual(bubble_sort(self.F), sorted(self.F))
     
-
-
+    def test_insertion_decreasing(self):
+        self.assertEqual(insertion_sort_decreasing(self.A), sorted(self.A, reverse=True))
+        self.assertEqual(insertion_sort_decreasing(self.B), sorted(self.B, reverse=True))
+        self.assertEqual(insertion_sort_decreasing(self.C), sorted(self.C, reverse=True))
+        self.assertEqual(insertion_sort_decreasing(self.D), sorted(self.D, reverse=True), )
+        self.assertEqual(insertion_sort_decreasing(self.F), sorted(self.F, reverse=True))
+    
 
 if __name__ == "__main__":
     unittest.main()
