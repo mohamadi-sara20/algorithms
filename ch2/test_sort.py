@@ -6,8 +6,10 @@ from merge_nosentinel import merge_nosentinel
 import random
 from insertion_recursive import insertion_recursive
 from insertion_binary import insertion_binary
-from bubble_sort import bubble_sort
+from p4.inversion import count_inversions
 from insertion_decreasing import insertion_sort_decreasing
+from p2.bubble_sort import bubble_sort
+
 class TestSort(unittest.TestCase):
     def __init__(self, *args, **kwargs):
         super(TestSort, self).__init__(*args, **kwargs)
@@ -74,8 +76,15 @@ class TestSort(unittest.TestCase):
         self.assertEqual(insertion_sort_decreasing(self.A), sorted(self.A, reverse=True))
         self.assertEqual(insertion_sort_decreasing(self.B), sorted(self.B, reverse=True))
         self.assertEqual(insertion_sort_decreasing(self.C), sorted(self.C, reverse=True))
-        self.assertEqual(insertion_sort_decreasing(self.D), sorted(self.D, reverse=True), )
+        self.assertEqual(insertion_sort_decreasing(self.D), sorted(self.D, reverse=True))
         self.assertEqual(insertion_sort_decreasing(self.F), sorted(self.F, reverse=True))
+
+    def test_count_inversion(self):
+        self.assertEqual(count_inversions([8, 4, 1, 2], 0, 3), 5)
+        self.assertEqual(count_inversions([6,5,4,3,2,1], 0, 5), 15)
+        self.assertEqual(count_inversions([3], 0, 0), 0)
+        self.assertEqual(count_inversions([2, 4, 1, 3, 5], 0, 4), 3)
+    
     
 
 if __name__ == "__main__":

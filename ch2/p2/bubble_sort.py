@@ -8,3 +8,9 @@ def bubble_sort(A):
                 A[j] = tmp
     
     return A
+
+
+# b. Initialization, Maintenance, and Termination. We need to show the loop invariant is valid before the first iteration, 
+# remains valid till i= 0 to n, and when i = n +1, the array is sorted. 
+
+# b. 

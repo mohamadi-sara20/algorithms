@@ -1,6 +1,6 @@
 # Chapter 2 Exercises & Problems
 
-### 2.1.1
+## 2.1.1
 
 ```
 (key starts at j = 2)
@@ -12,7 +12,7 @@
 26, 31, 41, 41, 58, 59
 ```
 
-### 2.1.2
+## 2.1.2
 
 ```
 for j = 2 to A.length
@@ -24,7 +24,7 @@ for j = 2 to A.length
     A[i+1] = key
 ```
 
-### 2.1.3
+## 2.1.3
 
 ```
 LinearSearch(v, A)
@@ -42,7 +42,7 @@ Loop Invariant: at i, v is definitely not in A[1 ... i-1].
 3. Termination: At i=A.length + 1, we are certain v does not exist in the array, and therefore return null. 
 ```
 
-### 2.1.4
+## 2.1.4
 
 ```
 AddBinary(A, B)
@@ -65,13 +65,13 @@ return C
     return C -->
 ```
 
-### 2.2.1
+## 2.2.1
 
 ```
 Θ(n^3)
 ```
 
-### 2.2.2
+## 2.2.2
 
 ```
 Loop Invariant: 1 to k has k smallest numbers of the array in a sorted order. 
@@ -81,20 +81,20 @@ Worst case: Θ(n^2)
 Best case and worst case does are the same, because it does not matter what orer the elements come in, we need to do a certain number of comparisons at each iteration anyway (to find the k smallest number), independent of the primary configuaration of the array. 
 ```
 
-### 2.2.3
+## 2.2.3
 
 ```
 Average: E(X) = sum(pi * xi) = 1/n * sum(xi) = (n * (n + 1))/2n = (n+1)/2 (pi is equal for all indices, and xi are indices themselves)
 Worst case: n elements should be checked. 
 ```
 
-### 2.2.4
+## 2.2.4
 
 ```
 Caching could help?
 ```
 
-### 2.3.1
+## 2.3.1
 
 ```
             3 9 26 38 41 52 57
@@ -104,21 +104,21 @@ Caching could help?
 ```
 
 
-### 2.3.2
+## 2.3.2
 ```
 See _merge_nosentinel.py_. 
 ```
 
-### 2.3.3
+## 2.3.3
 
 
-### 2.3.4
+## 2.3.4
 
 ```
 See _insertion_recursive.py_. 
 ```
 
-### 2.3.5
+## 2.3.5
 
 ```
 See _binary_search.py_. 
@@ -137,9 +137,8 @@ BinarySearch(A, low, high, v):
 ```
 
 
-### 2.3.6
+## 2.3.6
 ```
 Combining binary search with insertion sort would not help the performance much, because although we know where to insert the current element, the number of items to be moved remain the same as the linear search case. 
 ```
 
-## Problems
