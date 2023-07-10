@@ -150,6 +150,13 @@ Since lg2(2^(k + 1)) = k + 1, the recurrence is proven for k+1.
 ## 2.3.4
 
 ```
+
+T(n) = {
+    1                       if n = 1
+    T(n-1) + (n - 1)         if n > 1
+}
+
+
 See _insertion_recursive.py_. 
 ```
 
