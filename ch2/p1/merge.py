@@ -54,32 +54,11 @@ def merge_sort(A, p, r, k=10):
 
 
 if __name__ == "__main__":
-    # a. (n/k) * k^2 = nk
+    # a. (n/k) * k^2 = nk 
+
     # b. n * log(n/k) (n is the length of the array that is being merged (all elements have to be seen at least once in merging) 
     # && log(n/k) is the length of the binary tree with n/k elements.)
+
     # c. a * lgn = lg(n/k) --> a * lgn = lgn - lg k --> -algn + lgn = lgk --> lgk = (a-1) lgn --> k = n^(1-a)
+
     # d. In practice, we could try out different ks for different lengths that are relevant to the use case and pick k. 
-    # It seems for example that k=8 seems like a reasonable choice if length is around 100 and 1000 and k ={2, 4, ... , 1024}
-    A = [i for i in range(1000, 0, -1)]
-    B = [i for i in range(100, 0, -1)]
-    # C = [i for i in range(10, 0, -1)]
-    D = [A, B]
-    # print(A)
-    k = [2**k for k in range(2, 10)]
-    for j in range(len(D)):
-        times = dict({})
-        for i in range(len(k)):
-            start = time.time()
-            b = merge_sort(D[j], 0, len(D[j])-1, i)
-            end = time.time()
-            rt = end - start
-            key = str(len(D[j]))
-            times[key + "k="+ str(k[i])] = rt
-    
-        lists = sorted(times.items())
-        x, y = zip(*lists)
-        plt.plot(x, y)
-        plt.show()
-
-
-
