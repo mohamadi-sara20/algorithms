@@ -53,7 +53,7 @@ def merge_sort(A, p, r, k=10):
     return A
 
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
     # a. (n/k) * k^2 = nk 
 
     # b. n * log(n/k) (n is the length of the array that is being merged (all elements have to be seen at least once in merging) 
