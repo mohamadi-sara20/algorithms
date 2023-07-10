@@ -41,6 +41,7 @@ Loop Invariant: at i, v is definitely not in A[1 ... i-1].
 2. Maintenance: Each iteration maintains the loop invariant, because -informally- the subarray A[i] at each iteration tells us whether or not v is in that index. If not, we increment the i and move on to the next iteration. If yes, we return. 
 3. Termination: At i=A.length + 1, we are certain v does not exist in the array, and therefore return null. 
 ```
+2.1.4.
 
 ## 2.1.4
 
@@ -48,7 +49,7 @@ Loop Invariant: at i, v is definitely not in A[1 ... i-1].
 AddBinary(A, B)
 for j = A.length downto 1:
     if A[j] + B[j] < 2:
-        C[j] = A[j] + B[j]
+        C[j] += A[j] + B[j]
     else:
         C[j] = 0
         C[j - 1 ] += 1
@@ -58,7 +59,7 @@ return C
     C = [0 for i in range(len(A)+1)]
     for j in reversed(range(len(A))):
         if A[j] + B[j] < 2:
-            C[j] = A[j] + B[j]
+            C[j] += A[j] + B[j]
         else:
             C[j] = 0
             C[j ] += 1
@@ -106,11 +107,44 @@ Caching could help?
 
 ## 2.3.2
 ```
-See _merge_nosentinel.py_. 
+MERGE(A, p, q, r)
+n1 = q - p + 1
+n2 = r - q
+let L[1...n1+1] and R[1...n2+1] be new arrays
+
+for i = 1 to n1
+    L[i] = A[p + i - 1]
+
+for j = 1 to n2
+    R[j] = A[q + j]
+
+i = 1
+j = 1
+
+for k = p to r
+    if i > n1:
+        A[k] = R[j]
+        j += 1
+    elif j > n2:
+        A[k] = L[i]
+        i += 1
+    elif L[i] < R[j]:
+        A[k] = L[i]
+        i += 1
+    else
+        A[k] = R[j]
+        j += 1
+
 ```
 
-## 2.3.3
+See _merge_nosentinel.py_ for the code. 
 
+## 2.3.3
+2^k: 2T(2^k / 2) + 2^k = 2^k*lg(2^k)= k*2^k
+2^(k+1): 2T(2^(k+1) / 2) + 2^(k+1) = 2(k* 2^k) + 2^(k+1)
+= k* 2^(k+1) + 2^(k+1)= 2^(k+1) [k + 1]
+
+Since lg2(2^(k + 1)) = k + 1, the recurrence is proven for k+1. 
 
 ## 2.3.4
 
