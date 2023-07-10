@@ -135,17 +135,18 @@ for k = p to r
         A[k] = R[j]
         j += 1
 
-```
 
 See _merge_nosentinel.py_ for the code. 
+```
 
 ## 2.3.3
+```
 2^k: 2T(2^k / 2) + 2^k = 2^k*lg(2^k)= k*2^k
 2^(k+1): 2T(2^(k+1) / 2) + 2^(k+1) = 2(k* 2^k) + 2^(k+1)
 = k* 2^(k+1) + 2^(k+1)= 2^(k+1) [k + 1]
 
 Since lg2(2^(k + 1)) = k + 1, the recurrence is proven for k+1. 
-
+```
 ## 2.3.4
 
 ```
