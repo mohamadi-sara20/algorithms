@@ -41,9 +41,8 @@ So the sum is correct at termination.
 
 Initially, when i = n, the sum is zero. 
 
+When at iteration i:
 
-```
+y = ai + x * Σ(k=0 to n-(i+1)) ak+i+1 * x^k = ai + x * Σ(k=1 to n-i) ak+i * x^(k-1) = ai + x * Σ(k=1 to n-i) ak+i * x^(k-1) = ai + Σ(k=1 to n-i) ak+i * x^k = Σ(k=0 to n-i) ak+i * x^k
 
-##d. 
-```
 ```
