@@ -1,6 +1,7 @@
 # Horner's Rule
 
-##a. 
+## a. 
+
 ```
 f(n) = c1 (line 1) + c2 * n (line 2) + c3 * n (line 3) = c1 + n (c2 + c3) 
 let's assume g(n) is n. So lim f(n) / g(n) when n goes to infinity =
@@ -20,7 +21,7 @@ for instance, for n > 1, k2 = c2 + c3 is a possible value. So there's a k2 * n <
 So the code fragment's complexity ∈ θ(n). 
 ```
 
-##b. 
+## b. 
 ```
 y = 0
 p = 1
@@ -33,7 +34,8 @@ for i = n down to 0
 This is ∈ θ(n^2). This is not as efficient as Horner's rule. 
 ```
 
-##c. 
+## c. 
+
 ```
 At termination:
 i = -1, so k ranges from 0 to n, i.e. y = Σ(k=0 to n) ak+1 * x^k = a1 + a2 * x + a3 * x^2 + ... + an * x*n
