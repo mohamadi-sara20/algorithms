@@ -41,8 +41,13 @@ So the sum is correct at termination.
 
 Initially, when i = n, the sum is zero. 
 
-When at iteration i:
+When at iteration i, at line 2, we have the value of y from iteration i+1:
 
-y = ai + x * Σ(k=0 to n-(i+1)) ak+i+1 * x^k = ai + x * Σ(k=1 to n-i) ak+i * x^(k-1) = ai + x * Σ(k=1 to n-i) ak+i * x^(k-1) = ai + Σ(k=1 to n-i) ak+i * x^k = Σ(k=0 to n-i) ak+i * x^k
+y = a_i + x * Σ(k=0 to n-(i+1)) a_k+i+1 * x^k #variabe change p = k + 1
+= a_i + x * Σ(p=1 to n-i) a_p+i * x^(p-1)
+= a_i + Σ(p=1 to n-i) a_p+i * x^(p+1)
+= a_i + Σ(p=1 to n-i) a_p+i * x^p  (*) AND a_i = a_i+0 * x^0 (**)
+(*) and (**) --> y = Σ(p=0 to n-i) a_p+i * x^p
 
+When we go to i-1 (line 2), the value of y = y at iteration i-1.
 ```
