@@ -38,8 +38,10 @@ For a possible value for c2: (n+a)^b <= b/2(b+1)|a|^b.n^b holds for a<-1 and (n+
 ## 3.1.3
 ```
 O is an upper bound, so it cannot tell us what the running time 'at least' is, rather 'at most'. 
-
+```
 ## 3.1.4
+
+```
 Is 2^(n+1) O(2^n)? Yes, it is only by a constant factor 2 that they differ, so it's possible to find a c so that 2*2^n < c * 2^n. For example, c=3 could work here, as well as many other values. 
 
 Is 2^(2^n) O(2^n)? 
