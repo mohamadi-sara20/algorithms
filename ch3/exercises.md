@@ -63,7 +63,7 @@ If f(n) = O(g(n)) on the worst input, it is O(g(n)) on every input.
 Lower bound: Best input lower bound
 If f(n) = ω(g(n)) for the best input, it is ω(g(n)) for every input. 
 
-So if we take the worst input for the upper bound and the best on the lower bound, we have computed the upper bound on every input and the lower bound on every input. So it is always true that f(n) = O(g(n)) and f(n) = ω(g(n)). If f(n) = O(g(n)) and f(n) = ω(g(n)), then θ(g(n)). 
+So if we take the worst input for the upper bound and the best on the lower bound, we have computed the upper bound on every input and the lower bound on every input. So it is always true that f(n) = O(g(n)) and f(n) = ω(g(n)). If f(n) = O(g(n)) and f(n) = Ω(g(n)), then f(n) = θ(g(n)). 
 ```
 
 ## 3.1.7
