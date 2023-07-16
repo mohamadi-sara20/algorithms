@@ -72,7 +72,7 @@ o(g(n)) = {f(n): for any c > 0, there is an n0>0 such that 0<=f(n)<=cg(n)}
 
 ω(g(n)) = {f(n): for any c > 0, there is an n0>0 such that 0<=cg(n)<=f(n)}
 
-o(g(n)) ∩ ω(g(n)) =  functions asymptotically equal to or greater than f(n) ∩ functions asymptotically equal to or smaller than f(n) = ∅
+o(g(n)) ∩ ω(g(n)) =  functions asymptotically greater than f(n) ∩ functions asymptotically smaller than f(n) = ∅
 
 ```
 
