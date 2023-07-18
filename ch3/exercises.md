@@ -97,3 +97,19 @@ x1 < x2 -> f(x1) < f(x2) and g(x1) < g(x2)
 f(x) and g(x) are nonnegative -> f(x1)g(x1) < f(x2)g(x2)
 
 ```
+
+## 3.2.2
+```
+a^(lgc) = c^(lga) --> lg(a^(lgc)) = lg(c^(lga)) --> lga.lgc = lgx.lga
+```
+
+## 3.2.3
+```
+c1.n.lgn <= lg(n!) <= c2.n.lgn
+lgn! < lg(n^n) -> lgn! < nlgn -> c2=1 could be one possible value.
+
+
+
+
+```
+
