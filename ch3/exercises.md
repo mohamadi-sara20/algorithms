@@ -86,3 +86,14 @@ o(g(n)) ∩ ω(g(n)) =  functions asymptotically greater than f(n) ∩ functions
 θ(g(n,m)) = {f(n,m): there is a + constant c,n0,m0 such that 0 <= c1g(n,m) <=f(n,m) <= c2g(n,m)}
 
 ```
+
+## 3.2.1
+```
+x1 < x2 -> f(x1) < f(x2) and g(x1) < g(x2) -> f(x1) + g(x1) < f(x2) + g(x2)
+
+x1 < x2 -> g(x1) < g(x2) -> f(g(x1)) < f(g(x2))
+
+x1 < x2 -> f(x1) < f(x2) and g(x1) < g(x2) 
+f(x) and g(x) are nonnegative -> f(x1)g(x1) < f(x2)g(x2)
+
+```
