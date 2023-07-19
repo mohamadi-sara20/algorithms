@@ -108,8 +108,13 @@ a^(lgc) = c^(lga) --> lg(a^(lgc)) = lg(c^(lga)) --> lga.lgc = lgx.lga
 c1.n.lgn <= lg(n!) <= c2.n.lgn
 lgn! < lg(n^n) -> lgn! < nlgn -> c2=1 could be one possible value.
 
+c1.n.lg(c1.n) < lg(n!) = lg1 + lg2 + ... + lgn
+lg1 + lg2 + ... + lgn > lgn + lg(n-1) + ... + lg(n/2) > n/2 lg(n/2)
+--> n/2 lg(n/2) < lg(n!) (c=1/2)
 
-
+Stirling's approximation: 
+lgn! = lg((2πn)^0.5 * (n/e)^n * (1+θ(1/n)))
+θ(lgn!) = θ(lg((2πn)^0.5 * (n/e)^n * (1+θ(1/n)))) --> θ(lgn!) = nlgn
 
 ```
 
