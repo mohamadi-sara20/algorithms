@@ -148,3 +148,15 @@ Fk+1 = (phi^k - phic^k)/5^0.5 + Fk-1
 = (phi^k - phic^k + phi^(k-1) - phic^(k-1))/5^0.5 = (phi^(k-1)[phi + 1] - phic^(k-1)[phic + 1]) /5^0.5 = phi^(k+1) - phic^(k+1) / 5^0.5
 
 ```
+
+## 3.2.8
+```
+klnk = θ(n) --> k = θ(n/lnn )
+
+
+c1n <= k.lnk <= c2n
+c1n/lnn <= klnk/lnn <= c2n/lnn
+as n goes to infinity, k/lnn goes to zero, so c1n/lnn<=k<=c2n/lnn --> k = θ(n/lnn )
+
+
+```
