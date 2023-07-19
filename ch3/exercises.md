@@ -117,4 +117,30 @@ lgn! = lg((2πn)^0.5 * (n/e)^n * (1+θ(1/n)))
 θ(lgn!) = θ(lg((2πn)^0.5 * (n/e)^n * (1+θ(1/n)))) --> θ(lgn!) = nlgn
 
 ```
+## 3.2.6
+```
+x^2 = 1 + x
 
+((1+5^0.5)/2)^2 = (1 + 5 + 2*5^0.5)/4 = (6+2*5^0.5)/4
+1 + (1+5^0.5)/2 = (2 +  (1+5^0.5))/2 =  (3+5^0.5)/2
+So they are equal. 
+
+((1-5^0.5)/2)^2 = (1 + 5 - 2*5^0.5)/4 = (6-2*5^0.5)/4
+1 + (1-5^0.5)/2 = (2 +  (1-5^0.5))/2 =  (3-5^0.5)/2
+So they are equal. 
+
+```
+## 3.2.7
+```
+phi = Φ
+phic = the conjugate
+
+We assume the formula is correct for l:
+Fk = (phi^k - phic^k)/5^0.5 
+We must prove Fk+1 equals (phi^(k+1) - phic^(k+1))/5^0.5 
+
+Fk+1 = (phi^k - phic^k)/5^0.5 + Fk-1 
+= (phi^k - phic^k)/5^0.5 + (phi^(k-1) - phic^(k-1))/5^0.5 
+= (phi^k - phic^k + phi^(k-1) - phic^(k-1))/5^0.5 = (phi^(k-1)[phi + 1] - phic^(k-1)[phic + 1]) /5^0.5 = phi^(k+1) - phic^(k+1) / 5^0.5
+
+```
