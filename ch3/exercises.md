@@ -116,6 +116,10 @@ Stirling's approximation:
 lgn! = lg((2πn)^0.5 * (n/e)^n * (1+θ(1/n)))
 θ(lgn!) = θ(lg((2πn)^0.5 * (n/e)^n * (1+θ(1/n)))) --> θ(lgn!) = nlgn
 
+
+n!=o(n^n): lim(n!/n^n) = ∞
+n! = ω(2^n): lim(2^n/n!) = 0
+
 ```
 ## 3.2.6
 ```
