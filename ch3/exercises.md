@@ -153,10 +153,48 @@ Fk+1 = (phi^k - phic^k)/5^0.5 + Fk-1
 ```
 klnk = θ(n) --> k = θ(n/lnn )
 
-
 c1n <= k.lnk <= c2n
 c1n/lnn <= klnk/lnn <= c2n/lnn
 as n goes to infinity, k/lnn goes to zero, so c1n/lnn<=k<=c2n/lnn --> k = θ(n/lnn )
 
-
+Note to self: when proving some function is θ(n/lnn), k is allowed to be taken as a constant and the only variable there is n.
 ```
+
+
+
+
+# Problems
+## 3.2 
+lg^k(n) = o(n^eps) and O(n^eps)
+n^k = O(c^n) and o(c^n)
+n^0.5 and n^sinn cannot be compared in terms of growth as sin is always [-1, 1]. 
+2^n = Ω((2^n)^0.5) and ((2^n)^0.5) and ω((2^n)^0.5)
+n^lgc = θ(c^lgn) becaue n^lgc = (2^lgn)^lgc = c^lgn
+lgn! = θ(lg(n^n)) [Stirling approximaton, p. 57]
+## 3.3
+1, n^(1/lgn)
+lg\*lgn, lglg\*n
+lg\*n
+2^lg\*n
+lnlnn
+lgn^0.5
+lnn
+lg^2(n)
+2^((2lgn)^0.5)
+(2^0.5)^lgn
+n, 2^lgn
+nlgn, lg(n!)
+n^2
+4^lgn
+n^3
+n^lglgn
+lg^lgn
+(lgn)!
+(3/2)^n
+2^n
+e^n
+n2^n
+n!
+(n+1)!
+2^2^n
+2^2^(n+1)
