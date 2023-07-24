@@ -165,13 +165,16 @@ Note to self: when proving some function is θ(n/lnn), k is allowed to be taken 
 
 # Problems
 ## 3.2 
+```
 lg^k(n) = o(n^eps) and O(n^eps)
 n^k = O(c^n) and o(c^n)
 n^0.5 and n^sinn cannot be compared in terms of growth as sin is always [-1, 1]. 
 2^n = Ω((2^n)^0.5) and ((2^n)^0.5) and ω((2^n)^0.5)
 n^lgc = θ(c^lgn) becaue n^lgc = (2^lgn)^lgc = c^lgn
 lgn! = θ(lg(n^n)) [Stirling approximaton, p. 57]
+```
 ## 3.3
+```
 1, n^(1/lgn)
 lg\*lgn, lglg\*n
 lg\*n
@@ -198,3 +201,4 @@ n!
 (n+1)!
 2^2^n
 2^2^(n+1)
+```
