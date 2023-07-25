@@ -202,3 +202,16 @@ n!
 2^2^n
 2^2^(n+1)
 ```
+
+## 3.4 
+```
+a. Wrong. n = O(n^2) but n^2 ≠ O(n)
+b. Wrong. n+lgn ≠ O(lgn)
+c. Correct. 
+d. Wrong. cn = O(n), but 2^cn ≠ O(2^n) 
+e. Correct for incerasing functions. For decreasing functions like 1/x, this would not be the case. 
+f. Correct. 
+g. Wrong. 
+h. Correct. f(n) + o(f(n)) <= f(n) + f(n) = 2f(n) = θ(f(n))
+
+```
