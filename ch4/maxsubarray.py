@@ -1,4 +1,9 @@
 import math
+from itertools import chain
+import time
+import pandas as pd
+import matplotlib.pyplot as plt
+import random
 
 def maxsubarray_bruteforce(A):
     b = 0
@@ -15,12 +20,6 @@ def maxsubarray_bruteforce(A):
                 e = j
                 max_sum = sumib
     return b, e, max_sum
-
-
-
-def maxsubarray_dandc(A):
-    return
-
 
 
 def find_max_crossing_subarray(A, low, mid, high):
@@ -58,11 +57,75 @@ def maxsubarray(A, low, high):
         return low_right, high_right, max_right
     return low_cross, high_cross, max_cross
 
+def run(input, mode='bruteforce'):
+    if mode == 'bruteforce':
+        start_A = time.time()
+        maxsubarray_bruteforce(input)
+        end_A = time.time()
+        return end_A - start_A
+    elif mode == 'recursive':
+        start_A = time.time()
+        maxsubarray(input, 0, len(input)-1)
+        end_A = time.time()
+        return end_A - start_A
+    else:
+        start_A = time.time()
+        maxsubarray_bfbase(input, 0, len(input)-1)
+        end_A = time.time()
+        return end_A - start_A
+
+
+def maxsubarray_bfbase(A, low, high):
+    if high - low < 16:
+        return maxsubarray_bruteforce(A)
+    mid = (high + low) // 2
+    low_left, high_left, max_left = maxsubarray_bfbase(A, low, mid)
+    low_right, high_right, max_right = maxsubarray_bfbase(A, mid+1, high)
+    low_cross, high_cross, max_cross = find_max_crossing_subarray(A, low, mid, high)
+    if max_left >= max_right and max_left >= max_cross:
+        return low_left, high_left, max_left
+    elif max_right >= max_left and max_right >= max_cross:
+        return low_right, high_right, max_right
+    return low_cross, high_cross, max_cross
+
 if __name__ == "__main__":
+    A = [31, -41, 59, 26, -53, 58, 97, -93, -23, 84]
+    B = [A for i in range(16)]
+    C = [A for i in range(64)]
+    D = [A for i in range(256)]
+    E = [A for i in range(1024)]
+    F = [A for i in range(4096)]
+    B = list(chain.from_iterable(B))
+    C = list(chain.from_iterable(C))
+    D = list(chain.from_iterable(D))
+    E = list(chain.from_iterable(E))
+    F = list(chain.from_iterable(F))
+
+    random.shuffle(B)
+    random.shuffle(C)
+    random.shuffle(D)
+    random.shuffle(E)
+    random.shuffle(F)
+
+    inputs = [A, B, C, D, E, F]
+    running_times_bf = {}
+    running_times_recursive = {}
+    for inp in inputs:
+        rtb = run(mode='bruteforce', input=inp)
+        rtr = run(mode='recursive', input=inp)
+        running_times_bf[f'{len(inp)}'] = rtb
+        running_times_recursive[f'{len(inp)}'] = rtr
+
+    combined = {}
+    for k in running_times_recursive:
+        combined[k] = [running_times_recursive[k], running_times_bf[k]]
     
-    print(maxsubarray_bruteforce(a))
-    print(maxsubarray_bruteforce(b))
-    print(maxsubarray_bruteforce(c))
-    print(maxsubarray(a, 0, len(a)-1))
-    print(maxsubarray(b, 0, len(b)-1))
-    print(maxsubarray(c, 0, len(c)-1))
+    running_times_recursivebfbase = {}
+    for inp in inputs:
+        rtb = run(input=inp)
+        running_times_recursivebfbase[f'{len(inp)}'] = rtb
+
+
+    print(running_times_recursivebfbase)
+    print(running_times_recursive)
+    print(running_times_bf)

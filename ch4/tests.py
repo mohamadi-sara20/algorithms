@@ -1,5 +1,5 @@
 import unittest
-from maxsubarray import maxsubarray_bruteforce, maxsubarray
+from maxsubarray import maxsubarray_bruteforce, maxsubarray, maxsubarray_bfbase
 
 class TestCh4(unittest.TestCase):
     def __init__(self, *args, **kwargs):
@@ -12,7 +12,10 @@ class TestCh4(unittest.TestCase):
         self.assertEqual(maxsubarray_bruteforce(self.A), maxsubarray(self.A, 0, len(self.A)-1))
         self.assertEqual(maxsubarray_bruteforce(self.B), maxsubarray(self.B, 0, len(self.B)-1))
         self.assertEqual(maxsubarray_bruteforce(self.C), maxsubarray(self.C, 0, len(self.C)-1))
-
+        self.assertEqual(maxsubarray_bruteforce(self.A), maxsubarray_bfbase(self.A, 0, len(self.A)-1))
+        self.assertEqual(maxsubarray_bruteforce(self.B), maxsubarray_bfbase(self.B, 0, len(self.B)-1))
+        self.assertEqual(maxsubarray_bruteforce(self.C), maxsubarray_bfbase(self.C, 0, len(self.C)-1))
+        
         return
 
 if __name__ == "__main__":
