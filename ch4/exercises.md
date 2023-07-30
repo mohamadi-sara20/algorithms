@@ -1,11 +1,11 @@
 # Chapter 4 Exercises & Problems
 
-## 5.1.1
+## 4.1.1
 ```
 The least element.
 ```
 
-## 5.1.2
+## 4.1.2
 ```
 max-sum = 0
 b = 0
@@ -20,4 +20,12 @@ for i = 1 to A.length:
             e = j     
 ```
 
-## 5.1.3
+## 4.1.4
+
+```
+
+Lines 7-9, p. 72, another condition can be checked to make sure that the max is positive. If not, we can return 0. 
+
+```
+
+## 4.1.5

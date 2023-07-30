@@ -76,7 +76,7 @@ def run(input, mode='bruteforce'):
 
 
 def maxsubarray_bfbase(A, low, high):
-    if high - low < 16:
+    if high - low < 11:
         return maxsubarray_bruteforce(A)
     mid = (high + low) // 2
     low_left, high_left, max_left = maxsubarray_bfbase(A, low, mid)
@@ -88,8 +88,31 @@ def maxsubarray_bfbase(A, low, high):
         return low_right, high_right, max_right
     return low_cross, high_cross, max_cross
 
+
+def maxsubarray_kadane(A):
+    max_iend = A[0]
+    max_sofar = A[0]
+    bind = 0
+    eind = 0
+    bind_sofar = 0
+    eind_sofar = 0
+    for i in range(1, len(A)):
+        if A[i] > max_iend + A[i]:
+            bind = i
+            eind = i
+            max_iend = A[i]
+        elif A[i] < max_iend + A[i]:
+            eind = i
+            max_iend += A[i]
+        if max_iend > max_sofar:
+            max_sofar = max_iend
+            bind_sofar = bind
+            eind_sofar = eind
+        
+    return bind_sofar, eind_sofar, max_sofar
+    
 if __name__ == "__main__":
-    A = [31, -41, 59, 26, -53, 58, 97, -93, -23, 84]
+    A = [-1, 2, 4, -3, 5, -6]
     B = [A for i in range(16)]
     C = [A for i in range(64)]
     D = [A for i in range(256)]
@@ -129,3 +152,5 @@ if __name__ == "__main__":
     print(running_times_recursivebfbase)
     print(running_times_recursive)
     print(running_times_bf)
+
+
