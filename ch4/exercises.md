@@ -94,26 +94,34 @@ If k < 9, then T(n) =  θ(n^2) and so T(n) = o(n^lg7).
 ```
 
 1. T(n) = 132464T(n/68) + θ(n^2); n^2 < n^log(132464, 68) so T(n) = θ(n^2.7951284873613815).
-2. T(n) = 143640(n/70) + θ(n^2) is n^log(143640, 70);  θ(n^2) <  n^log(143640, 70) so T(n) = θ(n^2.795122689748337).
-3. T(n) = 155424(n/72) + θ(n^2) is n^log(155424, 72); θ(n^2) <  n^log(155424, 72) so T(n) = θ(n^2.795147391093449)
+2. T(n) = 143640(n/70) + θ(n^2) is n^log(143640, 70);  n^2 <  n^log(143640, 70) so T(n) = θ(n^2.795122689748337).
+3. T(n) = 155424(n/72) + θ(n^2) is n^log(155424, 72); n^2 <  n^log(155424, 72) so T(n) = θ(n^2.795147391093449)
 
+Fastest in order:
 2 > 1 > 3
 
 
 4. Strassen: T(n) = 7T(n/2) + θ(n^2)
 n^2 < lg7, so T(n) =  θ(n^2.81). 
 
+Fastest in order:
 2 > 1 > 3 > 4. 
 
 ```
 
 ## 4.2.6
-
 ```
+a. k.1 by 1.k has k^2 multiplications. Each multiplication is a Strassen subroutine so k^2*lg7.
+b. 1.k by k.1 has k multiplications. Each multiplication has a Strassen subroutine so lg7*k. 
 
 ```
 
 ## 4.2.7
 ```
+P1 = a(d+c) = ad + ac
+P2 = c(a-b) = ac - bc
+P3 = d(a+b) = ad + bd
+R = P1 - P3 =  ad + ac - (ad + bd) = ac - bd
+I = P1 - P2 = ad + ac - (ac - bc) = ad + bc
 
 ```
