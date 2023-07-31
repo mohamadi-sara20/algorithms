@@ -172,3 +172,64 @@ T(n) >= ⌈n/2⌉lg(⌈n/2⌉) + ⌊n/2⌋ lg(⌊n/2⌋) + dn >= cn/4lgn/4 + cn/
 So T(n)=O(nlgn) and T(n) = Ω(nlgn) --> T(n) = θ(nlgn). 
 ```
 
+## 4.3.6
+```
+T(n) = 2(T(⌊n/2⌋) + 17) + n = O(nlgn). 
+
+T(n) <= 2c(⌊n/2⌋+17)lg(⌊n/2⌋ +17) + n <= 2c(n/2+17)lg(n/2+17) + n 
+<= 2c(n+17)lg(n+17) + n = 4cn + 4cnlgn + n <= nlgn if c < 1/4. 
+```
+
+## 4.3.7
+```
+```
+
+## 4.3.8
+```
+```
+
+## 4.3.9
+```
+```
+
+## 4.5.1 
+```
+a = 2
+b = 4
+
+a. 
+f(n) = 1
+n^lg(4, 2) =  √n 
+f(n) = 1 
+√n > 1 so T(n) =  θ(√n)
+
+b. 
+f(n) = √n
+√n = √n so T(n) =  θ(nlgn)
+
+c. 
+f(n) = n
+√n < n and n/2 < cn for c = 1/4 so T(n) =  θ(n)
+
+d. 
+f(n) = n^2
+√n < n^2 and 2(n/4)^2 = n^2/8 < n^2 for c = 1/16 so T(n) =  θ(n^2). 
+```
+
+## 4.5.2
+```
+T(n) = aT(n/4) + θ(n^2) < n^lg7
+
+n^lg(a, 4) < n^lg7
+
+If a < 49, then this algorithm works better than Strassen. 
+
+```
+
+## 4.5.3
+```
+
+
+
+```
+
