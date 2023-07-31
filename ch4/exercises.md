@@ -152,9 +152,23 @@ T(n) >= 2c⌊n/2⌋lg(⌊n/2⌋) + n >= 2c(n/2 - 1) lg⌊n/2⌋ >= (cn - 2c) lgn
 ## 4.3.4
 ```
 T(1) = 1
-T(n) = 2T(⌊n/2⌋) + n
-T(n) <= c.2.(⌊n-d⌋)lg(⌊n-d⌋) + n <= c.2.(n-d)lg(n-d) + n <
+T(n) = 2T(⌊n/2⌋) + n 
+If we prove T(n) is O(nlgn + 1), then:
 
+T(n) <= 2 ⌊n/2⌋ lg(⌊n/2⌋) + n <= nlgn/2 + n <= nlgn - n + n = nlgn < nlgn + 1
 
-
+T(1) <= 1.lg(1) + 1 = 1, so it holds. 
 ```
+
+## 4.3.5
+```
+1. 
+T(n) = T(⌈n/2⌉) + T(⌊n/2⌋) + θ(n)
+T(n) <= ⌈n/2⌉lg(⌈n/2⌉) + ⌊n/2⌋ lg(⌊n/2⌋) + dn <= c.n/2lg(n/2) + c.nlg(n) + dn
+<= cnlgn+cnlgn+cn = 2c.nlgn+dn <= nlgn holds for 0 < c < 1. 
+2.
+T(n) >= ⌈n/2⌉lg(⌈n/2⌉) + ⌊n/2⌋ lg(⌊n/2⌋) + dn >= cn/4lgn/4 + cn/4lgn/4 + dn = c/2 (nlgn/4) + dn = c/2 nlgn - cn + dn = c/2 * nlgn + n(d-c) >= nlgn for c > 2. 
+
+So T(n)=O(nlgn) and T(n) = Ω(nlgn) --> T(n) = θ(nlgn). 
+```
+
