@@ -205,7 +205,7 @@ f(n) = 1
 
 b. 
 f(n) = √n
-√n = √n so T(n) =  θ(nlgn)
+√n = √n so T(n) =  θ(√nlgn)
 
 c. 
 f(n) = n
@@ -228,8 +228,24 @@ If a < 49, then this algorithm works better than Strassen.
 
 ## 4.5.3
 ```
+T(n) = T(n/2) + θ(1)
+f(n) = a
+a = 1
+b = 2 
+n^lg1 = n^0 = 1
 
-
+(fn) = n^lg1 --> T(n) = θ(n^0lgn) = θ(lgn) = 
 
 ```
 
+## 4.5.4
+```
+It cannot. 
+f(n) = n^2lgn
+a = 4
+b = 2
+n^lg(4, 2) = n^2
+
+n^2 is not polynomically smaller than f(n), so here we're stuck in the gap. O(n^3) could work, but there must be a tighter bound too. 
+
+```
