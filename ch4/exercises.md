@@ -125,3 +125,36 @@ R = P1 - P3 =  ad + ac - (ad + bd) = ac - bd
 I = P1 - P2 = ad + ac - (ac - bc) = ad + bc
 
 ```
+
+## 4.3.1
+```
+T(n) = T(n-1) + n 
+T(n) <= c(n-1)^2 + n = cn^2 + c - 2cn + n = cn^2 + c - n (2c-1) 
+     <= cn^2
+```
+
+## 4.3.2
+```
+T(n) = T(⌈n/2⌉) + 1 
+T(n) <= lg(⌈n/2⌉) + 1 = lgn - lg 2 + 1 = lgn
+```
+
+## 4.3.3
+```
+T(n) = 2T(⌊n/2⌋) + n
+T(n) <= c.2⌊n/2⌋lg(⌊n/2⌋) + n <= cnlg(n/2) + n <= cn(lgn - lg2) + n = cnlgn - cn + n = cnlgn - n(c-1) <= cnlgn
+For c > 1. So T(n) = θ(nlgn). 
+
+T(n) >= 2c⌊n/2⌋lg(⌊n/2⌋) + n >= 2c(n/2 - 1) lg⌊n/2⌋ >= (cn - 2c) lgn/4 
+= (cn-2c) (lgn - lg4) = (cn-2c) (lgn - 2) = cnlgn - 2clgn -2cn + 4c + n  = cnlgn - 2clgn + n (-2c + 1) + 4c >= nlgn if (-2c+1) > 0 that is c > 1/2. 
+```
+
+## 4.3.4
+```
+T(1) = 1
+T(n) = 2T(⌊n/2⌋) + n
+T(n) <= c.2.(⌊n-d⌋)lg(⌊n-d⌋) + n <= c.2.(n-d)lg(n-d) + n <
+
+
+
+```
