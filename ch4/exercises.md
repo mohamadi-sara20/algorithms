@@ -44,19 +44,76 @@ C22 =
 
 ## 4.2.2
 ```
-n = A.rows
-if n == 1:
-    c11 = a11.b11
+strassen(A, B):
+    n = A.rows
+    if n == 1:
+        c11 = a11.b11
 
-else:
-    split A and B and C into 4 submatrices
-    compute S1, S2, ..., S10
-    compute P1, P2, ..., P7
-    c11 = P4 + P5 - P2 + P6
-    c12 = P1 + P2
-    c21 = P3 + P4
-    c22 = P5 + P1 - P3 - P7
-return C
+    else:
+        split A and B and C into 4 submatrices
+        compute S1, S2, ..., S10
+        strassen(A11, S1)
+        .
+        .
+        .
+        strassen(S9, S10)
+        c11 = P4 + P5 - P2 + P6
+        c12 = P1 + P2
+        c21 = P3 + P4
+        c22 = P5 + P1 - P3 - P7
+    return C
 
+```
+
+## 4.2.3
+```
+Padding with zeros so that the input becomes a power of two. 
+Laderman has found a way to multiply odd matrices using 23 multiplications. 
+```
+
+## 4.2.4
+```
+n = 3^x
+T(n) = kT(n/3) + θ(n^2)
+n^2 = n^log(k, 3)
+2 = log(k, 3) --> k = 9
+
+If k > 9 :
+-> log(k, 3) < 2.81. 
+-> log(22, 3) = 2.814
+-> log(21, 3) < 2.814
+
+So if k = 21, T(n) = o(n^lg7). 
+
+If k < 9, then T(n) =  θ(n^2) and so T(n) = o(n^lg7). 
+
+```
+
+## 4.2.5
+
+```
+
+1. T(n) = 132464T(n/68) + θ(n^2); n^2 < n^log(132464, 68) so T(n) = θ(n^2.7951284873613815).
+2. T(n) = 143640(n/70) + θ(n^2) is n^log(143640, 70);  θ(n^2) <  n^log(143640, 70) so T(n) = θ(n^2.795122689748337).
+3. T(n) = 155424(n/72) + θ(n^2) is n^log(155424, 72); θ(n^2) <  n^log(155424, 72) so T(n) = θ(n^2.795147391093449)
+
+2 > 1 > 3
+
+
+4. Strassen: T(n) = 7T(n/2) + θ(n^2)
+n^2 < lg7, so T(n) =  θ(n^2.81). 
+
+2 > 1 > 3 > 4. 
+
+```
+
+## 4.2.6
+
+```
+
+```
+
+## 4.2.7
+```
 
 ```
