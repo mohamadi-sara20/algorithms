@@ -196,7 +196,7 @@ T(n) <= 2c(⌊n/2⌋+17)lg(⌊n/2⌋ +17) + n <= 2c(n/2+17)lg(n/2+17) + n
 ```
 T(n) = n + (3/2)*n + (3/2)^2 * n + ... + (3/2)^((lgn)-1)*n + 3^lgn
 
-Sum of the first n-1 terms = n * [(3/2)^((lgn)-1) - 1]/(1/2) =
+Sum of the first n-1 terms = n * [(3/2)^((lgn)-1) - 1]/(1/2) =>
 T(n) = 2n(3/2)^((lgn)-1) - 2n + 3^lgn = O(3^lgn) = O(n^lg3)
 
 Substitution method:
