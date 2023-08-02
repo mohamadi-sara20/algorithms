@@ -194,6 +194,15 @@ T(n) <= 2c(⌊n/2⌋+17)lg(⌊n/2⌋ +17) + n <= 2c(n/2+17)lg(n/2+17) + n
 
 ## 4.4.1 
 ```
+T(n) = n + (3/2)*n + (3/2)^2 * n + ... + (3/2)^((lgn)-1)*n + 3^lgn
+
+Sum of the first n-1 terms = n * [(3/2)^((lgn)-1) - 1]/(1/2) =
+T(n) = 2n(3/2)^((lgn)-1) - 2n + 3^lgn = O(3^lgn) = O(n^lg3)
+
+Substitution method:
+T(n) <= 3 * ⌊n^lg3/2⌋ + cn <= 3/2 * n^lg3 + cn = 3/2 * n^lg3 (1 + c/n^a) 
+[a < 1, as n goes to infinity, c/n^a goes to zero] so T(n) = O(n^lg3)
+
 ```
 
 ## 4.4.2
