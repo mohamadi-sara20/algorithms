@@ -212,11 +212,15 @@ T(n) ≈ n^2 * 1/(1-1/4) = 4/3 * n^2
 Substitution method:
 T(n) <= ⌊n^2/4⌋ + cn^2 <= n^2/4 + cn^2 <= 2cn^2 --> T(n) = O(n^2)
 
-
-
 ```
 ## 4.4.3
 ```
+recursion tree gives us: T(n) = n + 2n + 4n + 8n + .... + 2^(lgn)
+T(n) = n * (2^lgn - 1 / (2-1)) = n * (2^lgn - 1) = n * 2^lgn - n = n*n - n = n^2 - n --> O(n^2)
+
+Substitution method:
+T(n)<= 4(n/2 + 2)^2 + n = 4(n^2/4 + 4 + n) + n = n^2 + 16 + 4n + cn <= 4n^2 + 16 + (c+4)n <= 5n^2 --> T(n) = O(n^2). 
+
 ```
 ## 4.4.4
 ```
