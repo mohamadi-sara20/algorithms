@@ -207,6 +207,13 @@ T(n) <= 3 * ⌊n^lg3/2⌋ + cn <= 3/2 * n^lg3 + cn = 3/2 * n^lg3 (1 + c/n^a)
 
 ## 4.4.2
 ```
+recursion tree gives us: T(n) = n^2 + n^2/4 + n^2/16 + ... + n^2/4^((lg2)-1) + lgn
+T(n) ≈ n^2 * 1/(1-1/4) = 4/3 * n^2
+Substitution method:
+T(n) <= ⌊n^2/4⌋ + cn^2 <= n^2/4 + cn^2 <= 2cn^2 --> T(n) = O(n^2)
+
+
+
 ```
 ## 4.4.3
 ```
