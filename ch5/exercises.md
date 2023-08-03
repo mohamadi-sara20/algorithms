@@ -7,5 +7,6 @@
 ```
 p = Random(0, 1)
 chosen = a + p * (a-b)
-E(running time) = 
+E(running time) = chosen * cost-of-each-one-procedure
+
 ```
