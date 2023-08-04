@@ -20,17 +20,20 @@ At each iteration, we are able to decide whether or not the current candidate is
 
 ## 5.1.2
 ```
-p = Random(0, 1)
-chosen = a + p * (a-b)
-E(running time) = chosen * cost-of-each-one-procedure
+RANDOM(a,b)
+    p = Random(0, 1)
+    chosen = a + p * (b-a)
+    return chosen
+
+It is Θ(1). 
 
 ```
 
 ## 5.1.3
 ```
-biased random expectation or f(x) = p
-E(f(x)) = p (1) + (1-p) (0) = p
-g(x) = 1/2x
-E(g(f(x))) = 1/2p * p = 1/2
+UNIFORM-RANDOM:
+    
+    
+
 
 ```
