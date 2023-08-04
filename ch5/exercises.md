@@ -31,9 +31,17 @@ It is Θ(1).
 
 ## 5.1.3
 ```
-UNIFORM-RANDOM:
-    
-    
 
+UNIFORM-RANDOM:
+// estimate p; whatever the distribution, CLT ensures we get a good estimate of p as long as we have a large sample, let's say 10000.
+    c = 0
+    for i = 1 to 10000:
+        x = BIASED-RANDOM()
+        if x == 1:
+            c++
+    p = c / 10000
+// compose 
+    chosen = p * 1/2p
+    return chosen
 
 ```
