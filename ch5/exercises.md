@@ -61,7 +61,7 @@ Two configurations that lead to hiring exactly twice:
 (b) best candidate being the second to be interview 
 
 #a = 1 * (n-1)!
-#b = (n-2) * 1 * (n-1)! (first person cannot be the best candidate and the second best candidate; second best being first was coundted in case (a)). 
+#b = (n-2) * 1 * (n-2)! (first person cannot be the best candidate and the second best candidate; second best being first was coundted in case (a)). 
 #S = n!
 
 P(two hires) = ((n-1)! + (n-2) * (n-2)!) / n! = 
