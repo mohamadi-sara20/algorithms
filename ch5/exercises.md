@@ -31,7 +31,6 @@ It is Θ(1).
 
 ## 5.1.3
 ```
-
 UNIFORM-RANDOM:
 // estimate p; whatever the distribution, CLT ensures we get a good estimate of p as long as we have a large sample, let's say 10000. 
     c = 0
@@ -73,7 +72,6 @@ P(two hires) = ((n-1)! + (n-2) * (n-2)!) / n! =
 
 ## 5.2.3
 ```
-
 E(X) = Σ xi * P(xi) = 1 * 1/6 + 2 * 1/6 + 3 * 1/6 + ... + 6 * 1/6 = 3.5
 n dice:
 E(X) = E(X) + E(X) + ... + E(X) = nE(X) = 3.5n (by linearity of expectation)
@@ -81,6 +79,10 @@ E(X) = E(X) + E(X) + ... + E(X) = nE(X) = 3.5n (by linearity of expectation)
 
 ## 5.2.4
 ```
+Xi = I{person i gets their own hat} = {1 if perso i gets their hat; 0 if person i gets someone else's hat}
+E(Xi) = 1 * 1/n + 0 * (n-1)/n = 1/n
+Y = number of people that get their own hats
+E(Y) = E(ΣYi) = Σ E(Yi) = Σ 1/n = n * 1/n = 1
 ```
 
 ## 5.2.5
