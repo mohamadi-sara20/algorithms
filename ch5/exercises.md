@@ -79,7 +79,7 @@ E(X) = E(X) + E(X) + ... + E(X) = nE(X) = 3.5n (by linearity of expectation)
 
 ## 5.2.4
 ```
-Xi = I{person i gets their own hat} = {1 if perso i gets their hat; 0 if person i gets someone else's hat}
+Xi = I{person i gets their own hat} = {1 if person i gets their hat; 0 if person i gets someone else's hat}
 E(Xi) = 1 * 1/n + 0 * (n-1)/n = 1/n
 Y = number of people that get their own hats
 E(Y) = E(ΣYi) = Σ E(Yi) = Σ 1/n = n * 1/n = 1
@@ -89,4 +89,7 @@ E(Y) = E(ΣYi) = Σ E(Yi) = Σ 1/n = n * 1/n = 1
 ```
 ```
 
-
+## 5.3.2
+```
+This cannot produce "any" permutation, because at each i, A[i] absolutely has to move to a a higher index, so permutations whose beginning element is the same as the original array cannot be produced; for example, if the original array is [1,2,3], we can never get [1, 3, 2], because 1 has to move to index 2 or 3 of the array at iteration 1 and will nevere get the chance to go back to index 1 later, since future potential places of it are i+1 to n. 
+```
