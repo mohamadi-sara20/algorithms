@@ -74,6 +74,9 @@ P(two hires) = ((n-1)! + (n-2) * (n-2)!) / n! =
 ## 5.2.3
 ```
 
+E(X) = Σ xi * P(xi) = 1 * 1/6 + 2 * 1/6 + 3 * 1/6 + ... + 6 * 1/6 = 3.5
+n dice:
+E(X) = E(X) + E(X) + ... + E(X) = nE(X) = 3.5n (by linearity of expectation)
 ```
 
 ## 5.2.4
