@@ -33,7 +33,7 @@ It is Θ(1).
 ```
 
 UNIFORM-RANDOM:
-// estimate p; whatever the distribution, CLT ensures we get a good estimate of p as long as we have a large sample, let's say 10000.
+// estimate p; whatever the distribution, CLT ensures we get a good estimate of p as long as we have a large sample, let's say 10000. 
     c = 0
     for i = 1 to 10000:
         x = BIASED-RANDOM()
@@ -45,3 +45,43 @@ UNIFORM-RANDOM:
     return chosen
 
 ```
+
+## 5.2.1
+```
+Hiring exactly once: best candidate being the first candidate. 
+(n-1)! / n! = 1/n
+
+Hiring exactly n times: best candidate being the last, and the rest being sorted in terms of their rank: 1/n!
+```
+
+## 5.2.2
+```
+Two configurations that lead to hiring exactly twice:
+(a) second best candidate being the first person 
+(b) best candidate being the second to be interview 
+
+#a = 1 * (n-1)!
+#b = (n-2) * 1 * (n-1)! (first person cannot be the best candidate and the second best candidate; second best being first was coundted in case (a)). 
+#S = n!
+
+P(two hires) = ((n-1)! + (n-2) * (n-2)!) / n! = 
+((n-1) * (n-2)!  + (n-2) * (n-2)!) / n! =  
+((n-2)! [(n-1) + (n-2)]) / n! = 
+((n-2)! [(n-1) + (n-2)]) / (n * (n-1) * (n-2)!) = 
+([(n-1) + (n-2)]) / (n * (n-1)) = (2n-3) / (n(n-1))
+```
+
+## 5.2.3
+```
+
+```
+
+## 5.2.4
+```
+```
+
+## 5.2.5
+```
+```
+
+
