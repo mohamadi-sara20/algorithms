@@ -243,6 +243,17 @@ T(n)<= 4(n/2 + 2)^2 + n = 4(n^2/4 + 4 + n) + n = n^2 + 16 + 4n + cn <= 4n^2 + 16
 
 ## 4.4.6
 ```
+The cost at each depth of the tree is n. 
+Depth 1: n
+Depth 2: 2n/3 + n/3 = n
+Depth 3: 4n/9 + 2n/9 + 2n/9 + n/9 = 9n/9 = n
+.
+.
+.
+Since the cost is always n at each level, the total number of computations is n * depth.
+ If we'd divide by 2 each time, tree depth would be: lgn. 
+Here we are dividing by 2/3 and 1/3 each time. So the 1/3 branch will be exhausted sooner than the lgn case. However, the 2n/3 branch would be deeper than the lgn case. So the 2n/3 height is at least lgn. So the compelxity is at least n * lgn. 
+
 ```
 
 ## 4.4.7
