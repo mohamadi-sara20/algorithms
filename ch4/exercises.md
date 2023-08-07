@@ -182,6 +182,16 @@ T(n) <= 2c(⌊n/2⌋+17)lg(⌊n/2⌋ +17) + n <= 2c(n/2+17)lg(n/2+17) + n
 
 ## 4.3.7
 ```
+T(n) = 4T(n/3)+n
+T(n) <= 4(c(n/3)^lg(4,3)) + n = 4cn^lg(4,3) + n 
+
+subtract a lower order term: n
+
+T(n) <= 4c((n/3)^lg(4,3)-n/3) + n = 
+4c(n/3)^lg(4,3) - 4cn/3 + n = 
+4c(n/3)^lg(4,3) - (4cn - 3n /3) 
+for c > 3/4, 4cn > 3n and so (4cn - 3n)/3 is a positive number that we are subtracting from the first term, so:
+T(n) <= 4c(n/3)^lg(4,3) - (4cn - 3n /3) <= 4c(n/3)^lg(4,3) = m(n/3)^lg(4,3)
 ```
 
 ## 4.3.8
