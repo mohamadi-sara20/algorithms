@@ -35,7 +35,7 @@ No, heap constraint is violated when 6 is smaller than 7.
 ## 6.1.7
 ```
 Children of node i are at 2i and 2i+1. n is the last element that can be child. 
-If it is the left child (n mod 2 == 0): (a) n = 2i --> n/2 = i --> ⌊n/2⌋ = i 
+If it is the left child (n mod 2 == 0): (a) n = 2i --> n/2 = i
 If it is the right child (n mod 2 == 1): (b) n = 2i + 1 --> n/2 - 1/2 = i --> ⌊n/2⌋ = i 
-min(a, b) = ⌊n/2⌋ is the last element that can be a parent, so any element after it is a leaf. So elements from ⌊n/2⌋ + 1 onwards are children. 
+⌊n/2⌋ is the last element that can be a parent, so any element after it is a leaf. So elements from ⌊n/2⌋ + 1 onwards are children. 
 ```
