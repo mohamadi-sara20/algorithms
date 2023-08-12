@@ -98,3 +98,67 @@ See heapify_loopified method in heapsort.py
 T(n) = T(2n/3) + Θ(1) is Ω(lgn). 
 T(n) <= lg(2n/3) + Θ(1) = lg2 + lgn - lg3 + Θ(1) <= 2lgn
 ```
+## 6.3.1
+```
+A = 5, 3, 17, 10, 84, 19, 6, 22, 9
+[A.length /2] = 4
+build heap and heapify with i=4:
+
+                      5
+                3           17
+            10     84     19   6
+         22    9
+
+                      5
+                3           17
+            22     84     19   6
+         10    9
+
+
+build heap and heapify with i=3:
+
+                      5
+                3           19
+            22     84     17   6
+         10    9
+
+build heap and heapify with i=2:
+
+                      5
+                84         19
+            22     3     17   6
+         10    9
+
+build heap and heapify with i=1:
+
+                      84
+                22          19
+            10     3     17   6
+         5    9
+```
+## 6.3.2
+```
+HEAPIFY at i assumes binary trees rooted at 2i and 2i+1 are heaps. If we increment, we cannot ensure that. We start from the lower nodes in the tree to satisfy the HEAPIFY assumption. 
+```
+## 6.3.3
+```
+At each level in the tree, the nodes are twice as many as the level before: 1 + 2^1 + 2^2 + ... + 2^l
+The only level that can be not fully filled is the last level. 
+The max elements of the last level (n/2) = 2 * (# all nodes in previous layers = 2^l - 1) (n/2)
+# nodes in previous layers = m - 1
+# max nodes in last layer = m
+In that case:
+m + m - 1 = n 
+2m-1 = n 
+max elements of the last level: n / 2
+m - 1/2 = n/2
+m = (n+1)/2 
+Since n is odd, m = (n+1)/2 == ⌈n/2⌉
+So the formula is correct for h = 0 (lowest level in the tree. )
+
+
+Assume it holds for height k:
+⌈n/2^(k+1)⌉
+Prove it holds for height k+1, i.e. ⌈n/2^(k+2)⌉
+At height k+1, the nodes are 1/2 the nodes of height k: ⌈n/2^(k+1)⌉ * 1/2 = ⌈n/2^(k+2)⌉
+```
