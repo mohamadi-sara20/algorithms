@@ -65,16 +65,36 @@ larges ≠ i (largest = 2i+1 or 9), so we swap and call heapfiy on largest subtr
 ```
 ## 6.2.2
 ```
+MIN-HEAPIFY(A, i)
+
+left = 2i
+right = 2i+1
+smallest = i
+
+if left < A.heapsize and A[smallest] > A[left]:
+        smallest = left
+if right < A.heapsize and A[smallest] > A[right]:
+        smallest = right
+if smallest ≠ i:
+        swap A[i] and A[smallest]
+        MINHIPIFY(A, smallest)
+
+It is also O(lgn) (T(n) <= T(2n/3) + Θ(1)). 
 ```
 ## 6.2.3
 ```
+Nothing, because in that case MAX-HEAPFIY will not call itself on its subtree.
 ```
 ## 6.2.4
 ```
+Nothing, it will try to heapify children nodes, where the heap condition cannot be violated, as they have no children. 
 ```
 ## 6.2.5
 ```
+See heapify_loopified method in heapsort.py
 ```
 ## 6.2.6
 ```
+T(n) = T(2n/3) + Θ(1) is Ω(lgn). 
+T(n) <= lg(2n/3) + Θ(1) = lg2 + lgn - lg3 + Θ(1) <= 2lgn
 ```

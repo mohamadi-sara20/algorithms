@@ -1,5 +1,5 @@
 import unittest
-from heapsort import heapsort
+from heapsort import heapsort, heapsort_loopified
 import random
 
 class TestSort(unittest.TestCase):
@@ -12,12 +12,19 @@ class TestSort(unittest.TestCase):
         self.F = [random.randint(1, 10000) for i in range(2**5)]
         self.F = [random.randint(1, 10000) for i in range(3**3)]
 
-    def test_bubble_sort(self):
+    def test_heap_sort(self):
         self.assertEqual(heapsort(self.A), sorted(self.A))
         self.assertEqual(heapsort(self.B), sorted(self.B))
         self.assertEqual(heapsort(self.C), sorted(self.C))
         self.assertEqual(heapsort(self.D), self.D)
         self.assertEqual(heapsort(self.F), sorted(self.F))
+
+    def test_heap_sort_loopified(self):
+        self.assertEqual(heapsort_loopified(self.A), sorted(self.A))
+        self.assertEqual(heapsort_loopified(self.B), sorted(self.B))
+        self.assertEqual(heapsort_loopified(self.C), sorted(self.C))
+        self.assertEqual(heapsort_loopified(self.D), self.D)
+        self.assertEqual(heapsort_loopified(self.F), sorted(self.F))
 
 
 if __name__ == "__main__":
