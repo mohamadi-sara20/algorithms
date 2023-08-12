@@ -11,13 +11,6 @@ class HeapArray(list):
     def HEAP_SIZE(self, h):
         self._HEAP_SIZE = h
     
-    @property
-    def A(self):
-        return A
-    @A.setter
-    def set_A(self, A):
-        self.A = A
-
 
 def heapify(A, i):
     largest = i
