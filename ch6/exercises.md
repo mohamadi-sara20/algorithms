@@ -169,6 +169,7 @@ At height k+1, the nodes are 1/2 the nodes of height k: ⌈n/2^(k+1)⌉ * 1/2 = 
 Initialization: At start, A[1:A.length - 1] is a max heap and A[n] has the maximum element of the whole heap. 
 Maintenance: At each iteration i, A[1:A.length - i] is a max heap, because at iteration i - 1 MAX-HEAPIFY has been called on the root of the tree, so the ith greatest number of the heap is pushed up to the root of the heap. It is then swapped with n-ith element of the array and HEAPIFY then ensures that A[1:i-1] is a heap. 
 Termination: When i = 1, A[2:n] is sorted and has the first maximum, second maximum, ..., n-1th maximum. It only lacks the nth maximum or the least element. A[1] has the maximum of the first part of the array, that is A[1]. It is the nth max element, in its right place. 
+```
 ## 6.4.3
 ```
 Increasing order: O(nlgn)
@@ -178,4 +179,22 @@ Decreasing order: O(nlgn)
 ```
 BUILD HEAP is O(n). 
 Worst input for the loop: Decreasing order array. Each element, when swapped, has to go down the tree O(lgn), and the loop goes from n to 2 so n-1 times. So, for the worst case, it is Ω(nlgn). 
+```
+## 6.5.1
+```
+```
+## 6.5.2
+```
+```
+## 6.5.3
+```
+```
+## 6.5.4
+```
+```
+## 6.5.5
+```
+```
+## 6.5.6
+```
 ```

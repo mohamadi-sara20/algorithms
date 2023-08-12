@@ -14,3 +14,42 @@ A = 13, 19, 9, 5, 12, 8, 7, 4, 21, 2, 6, 11
 (10) i=6, p=1, j=11: 6 < 11; i++ and exchange A[7] with A[11] so A =  9, 5, 8, 7, 4, 2, 6, 12, 21, 13, 19, 11 and j++ 
 (11) swap A[i+1] with A[r] so A =  9, 5, 8, 7, 4, 2, 6, 11, 12, 21, 13, 19
 ```
+## 7.1.2
+```
+r (We do i++ r-1 times and at the end we r-1+1, so i = r). 
+```
+## 7.1.3
+```
+We compare each element to the pivot only once, so r-1-p comparisons are made, and the rest is constant O(1). r-1-p is proportional to the size of the array, so it is Θ(n).
+```
+## 7.1.4
+```
+line 4 should be changed to A[j] >= x. 
+```
+## 7.2.1
+```
+(a) T(n) <= (n-1)^2 + Θ(n) = n^2 + 1 - 2n + Θ(n) <= 2n^2 so T(n) = O(n^2)
+(b) T(n) >= (n-1)^2 + Θ(n) = n^2 + 1 - 2n + Θ(n) > n^2/2 so T(n) = Ω(n^2)
+From (a) and (b): T(n) = Θ(n^2)
+```
+## 7.2.2
+```
+All equal elements: 
+First time, q = r, and we will have a n-1 to 1 partition. 
+Second time, q = r, and we will have a n-1 to 1 partition. 
+And so son. Each time, the q equals r, and we have p to q-1 and q-q partitions, which is a n-1 to 1 ratio: the worst case. It can be described with the recurrence relation above: T(n) = T(n-1) + + Θ(n), which is Θ(n^2), as shown. 
+```
+## 7.2.3
+```
+In this case too, we always have a n-1 to 1 ratio, so the reccurence would again be (n) = T(n-1) + + Θ(n). Because the first time, q = r. Second time, q = r again, and so on. So this case is also a 'worst case'. 
+```
+## 7.2.4
+```
+Insertion sort's performance on almost sorted data is O(n), while almost sorted input could take the shape of T(n) = T(n-c) + Θ(n) for quicksort, which is Θ(n^2). 
+```
+## 7.2.5
+```
+```
+
+
+
