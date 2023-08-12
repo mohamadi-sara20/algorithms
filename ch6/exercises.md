@@ -3,7 +3,6 @@
 minimum: 2^h
 maximum: 2^(h+1) - 1
 ```
-
 ## 6.1.2
 ```
 2^h <= n <= 2^(h+1)-1 < 2^(h+1)
@@ -38,4 +37,44 @@ Children of node i are at 2i and 2i+1. n is the last element that can be child.
 If it is the left child (n mod 2 == 0): (a) n = 2i --> n/2 = i
 If it is the right child (n mod 2 == 1): (b) n = 2i + 1 --> n/2 - 1/2 = i --> ⌊n/2⌋ = i 
 ⌊n/2⌋ is the last element that can be a parent, so any element after it is a leaf. So elements from ⌊n/2⌋ + 1 onwards are children. 
+```
+## 6.2.1
+```
+
+                 27
+        17              3
+   16        13     10       1
+5    7    12   4   8  9    0
+
+
+largest ≠ i  (largest = 2i) , so we swap and call heapfiy on largest subtree.
+
+
+                 27
+        17              10
+   16        13     3       1
+5    7    12   4   8  9    0
+
+larges ≠ i (largest = 2i+1 or 9), so we swap and call heapfiy on largest subtree.
+
+                 27
+        17              10
+   16        13     9       1
+5    7    12   4   8  3    0
+
+```
+## 6.2.2
+```
+```
+## 6.2.3
+```
+```
+## 6.2.4
+```
+```
+## 6.2.5
+```
+```
+## 6.2.6
+```
 ```
