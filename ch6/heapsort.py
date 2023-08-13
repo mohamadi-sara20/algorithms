@@ -34,13 +34,12 @@ def build_heap(A, loopified=False):
         while i >= 0:
             heapify_loopified(A, i)
             i -= 1
-        return A
     else:
         i = math.floor(len(A)/2)
         while i >= 0:
             heapify(A, i)
             i -= 1
-        return A
+    return A
 
 def _heapsort(A, loopified=False):
     if loopified:
@@ -51,7 +50,6 @@ def _heapsort(A, loopified=False):
             A[len(A) - i - 1] = A[0]
             A[0] = tmp
             A.HEAP_SIZE -= 1
-        return A
     else:
         A = build_heap(A)
         for i in range(len(A)):
@@ -60,7 +58,7 @@ def _heapsort(A, loopified=False):
             A[len(A) - i - 1] = A[0]
             A[0] = tmp
             A.HEAP_SIZE -= 1
-        return A
+    return A
 
 def heapsort(A):
     return _heapsort(HeapArray(A, len(A)))
