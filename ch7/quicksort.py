@@ -20,7 +20,6 @@ def partition(A, p, r, descending=False):
         tmp = A[i+1] 
         A[i+1] = A[j] 
         A[j] = tmp
-        return i+1
     else:
         while j < r:
             if A[j] <= x:
@@ -36,6 +35,5 @@ def partition(A, p, r, descending=False):
 
 def quicksort(A, descending=False):
     if descending:
-        return _quicksort(A, 0, len(A)-1, descending=True)
-    else:
-        return _quicksort(A, 0, len(A)-1)
+        return _quicksort(A, 0, len(A)-1, descending=True)   
+    return _quicksort(A, 0, len(A)-1)
