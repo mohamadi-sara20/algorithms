@@ -11,3 +11,4 @@ def stirling_sec(m, n):
 if __name__ == "__main__":
     print(stirling_sec(3, 2))
     print(stirling_sec(7, 2))
+    print(stirling_sec(11, 4))
