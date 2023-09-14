@@ -40,3 +40,8 @@ SEARCH(T, k):
 ```
 [0,(28,19,10),(20),(12),0,(5),(15,33),0,(17)]
 ```
+## 11.2.4
+```
+Search (successful and unsuccesful) can be done via binary search: Θ(1+lg(α)).
+Insertion and deletion: Θ(1+n) because when adding an element or deleting one, everything after that element has to be shifted one step. 
+```
