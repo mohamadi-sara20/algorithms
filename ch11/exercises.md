@@ -42,6 +42,6 @@ SEARCH(T, k):
 ```
 ## 11.2.4
 ```
-Search (successful and unsuccesful) can be done via binary search: Θ(1+lg(α)).
-Insertion and deletion: Θ(1+n) because when adding an element or deleting one, everything after that element has to be shifted one step. 
+If we are allowed to use dynamic arrays to handle collisions, search (successful and unsuccesful) can be done via binary search: Θ(1+lg(α)), and insertion and deletion: Θ(1+n) because when adding an element or deleting one, everything after that element has to be shifted one step. 
+However, if we are only able to handle collision by linked lists, we cannot use a binary search to reduce running time logarithmically. Searching (successsful or unsuccessful) would still take Θ(1+α), because we cannot jump in a linked list. We can only move to the next item. 
 ```
