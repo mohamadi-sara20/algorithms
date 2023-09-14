@@ -34,7 +34,7 @@ SEARCH(T, k):
 
 ## 11.2.1
 ```
-
+(Similar to the Birthday Problem. Look here: https://math.stackexchange.com/questions/35791/birthday-problem-expected-number-of-collisions)
 ```
 ## 11.2.3
 ```
