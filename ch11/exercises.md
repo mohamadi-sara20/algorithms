@@ -56,6 +56,14 @@ First check hash values. If hash values are equal, we have either found our elem
 ```
 ## 11.4.1
 ```
+linear probing, m = 11 & h'(k) = k:
+22, 88, null, null, 4, 15, 28, 17, 59, 31, 10
+h(10) = 10 (empty so no problem)
+h(22) = 0 (empty so no problem)
+h(31) = 9 (empty so no problem)
+h(4) = 4 (empty so no problem)
+h(15) = 4 (collision; add 1 to i) --> h(15) = 15 + 1 mod 11 = 5 
+and so on...
 ```
 ## 11.4.2
 ```
