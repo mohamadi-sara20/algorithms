@@ -47,3 +47,29 @@ Also here: https://courses.cs.duke.edu/cps102/spring09/Lectures/L-18.pdf)
 If we are allowed to use dynamic arrays to handle collisions, search (successful and unsuccesful) can be done via binary search: Θ(1+lg(α)), and insertion and deletion: Θ(1+n) because when adding an element or deleting one, everything after that element has to be shifted one step. 
 However, if we are only able to handle collision by linked lists, we cannot use a binary search to reduce running time logarithmically. Searching (successsful or unsuccessful) would still take Θ(1+α), because we cannot jump in a linked list. We can only move to the next item. 
 ```
+## 11.3.1
+```
+First check hash values. If hash values are equal, we have either found our element, or one that collides with it. If hash values are the same, check the strings. 
+```
+## 11.3.2
+```
+```
+## 11.4.1
+```
+```
+## 11.4.2
+```
+procedure HASH-DELETE(T, k)
+    j = HASH-SEARCH(T, k)
+    T[j] = DELETED
+procedure HASH-INSERT(T, k)
+    i=0
+    repeat
+        j = h(k, i)
+        if T[j] == NIL or T[j] == DELETED:
+           T[j] = k
+           return j
+        else i = i + 1
+    until i == m
+    error "hash table overflow"
+```
