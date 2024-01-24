@@ -43,13 +43,12 @@ class Maze:
         elif direction == 'd' and y-1 >= 0 and self.maze_grid[x][y-1].val == 1 and not self.maze_grid[x][y-1].seen:
             # self.maze_grid[x][y-1].seen = True
             return (x, y-1)
-        elif direction == ';' and x-1 >= 0 and self.maze_grid[x-1][y].val == 1 and not self.maze_grid[x-1][y].seen:
+        elif direction == 'l' and x-1 >= 0 and self.maze_grid[x-1][y].val == 1 and not self.maze_grid[x-1][y].seen:
             # self.maze_grid[x-1][y].seen = True
             return (x-1, y)
         return
     
     def dfs_solve(self, origin, path):
-        # print("####", origin)
         if self.win(origin):
             return True
         directions = ['u', 'r', 'd', 'l']
