@@ -1,36 +1,33 @@
 # p. 68 
-# Grammar: S -> +SS | -SS | a
+# Grammar: 
+# S -> S'
+# S' -> ( S ) S S' | ε
 
-tokens = "-+aaa"
+tokens = "(((()))()((((((((((())))))))))))"
 lookahead = tokens[0]
 
-def S():
+
+def Sp():
     global lookahead
 
-    if lookahead == "+":
-        match("+")
+    if lookahead == "(":
+        match("(")
         S()
-        S()
-        
+        match(")")
+        Sp()
     
-    if lookahead == "-":
-        match("-")
-        S()
-        S()
-        
-    
-    if lookahead == "a":
-        match("a")
-    
-    else:
-        raise Exception("string rejected")
-        
-        
+    if lookahead is None:
+        pass
+   
+
+def S():
+    Sp()
+   
     
 def match(t):
     global lookahead
     if lookahead == t:
-        lookahead = next_element()
+        lookahead = next_element()    
     else:
         raise Exception("reject")
     
