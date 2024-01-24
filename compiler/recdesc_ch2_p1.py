@@ -1,8 +1,7 @@
 # p. 68 
 # Grammar: S -> +SS | -SS | a
 
-tokens = "-+aaa"
-
+tokens = "+a"
 lookahead = tokens[0]
 
 def S():
@@ -22,6 +21,10 @@ def S():
     
     if lookahead == "a":
         match("a")
+    
+    else:
+        raise Exception("string rejected")
+        
         
     
 def match(t):
@@ -41,8 +44,12 @@ def next_element():
         
 
 if __name__ == "__main__":
-    S()
-    if len(tokens) == 0:
-        print("string accepted")
-    else:
+    try:
+        S()
+        if len(tokens) == 0:
+            print("string accepted")
+        else:
+            print("string rejected")
+    except Exception:
         print("string rejected")
+    
